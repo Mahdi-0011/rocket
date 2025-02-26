@@ -8,7 +8,7 @@ export default function LukeCard() {
 	const [eyeColor, setEyeColor] = useState("");
 
 	useEffect(() => {
-		const url = "https://swapi.dev/api/people/2";
+		const url = "https://swapi.dev/api/people/1";
 		let ignore = false;
 
 		const fetchData = async () => {
@@ -31,7 +31,7 @@ export default function LukeCard() {
 
 	return (
 		<div className="LukeCard">
-			<h2>Star Wars API - People</h2>
+			<h2>LukeCard</h2>
 			{loading ? (
 				<p>loading...</p>
 			) : (
