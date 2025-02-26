@@ -1,4 +1,5 @@
 import "./App.scss";
+import DisneyCharacterCard from "./components/DisneyCharacterCard/DisneyCharacterCard";
 import LukeCard from "./components/LukeCard/LukeCard";
 import SWPeopleCard from "./components/SWPeopleCard/SWPeopleCard";
 
@@ -11,6 +12,8 @@ function App() {
 			<SWPeopleCard id={2} />
 			<SWPeopleCard id={3} />
 			<SWPeopleCard id={22} />
+			<DisneyCharacterCard id={308} />
+			<DisneyCharacterCard id={20} />
 		</>
 	);
 }
