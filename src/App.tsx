@@ -8,7 +8,7 @@ function App() {
 		<>
 			<h1>rocket</h1>
 			<p>a demo of useEffect</p>
-			<LukeCard />
+			<LukeCard id={1}/>
 			<div className="starwarscards">
 			<SWPeopleCard id={2} />
 			<SWPeopleCard id={3} />
