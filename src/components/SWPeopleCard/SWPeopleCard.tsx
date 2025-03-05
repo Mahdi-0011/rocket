@@ -5,7 +5,7 @@ type SWPeopleCardProps = {
 	id: number;
 };
 
-type SWPeople = {
+export type SWPeople = {
 	name: string;
 	height: string;
 	mass: string;
