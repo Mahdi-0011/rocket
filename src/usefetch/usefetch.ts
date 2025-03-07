@@ -1,33 +1,36 @@
 import { useState, useEffect } from "react";
 import { SWPeople } from "../components/SWPeopleCard/SWPeopleCard";
 
-const useFetch = (p0: string) => {
-  const [data, setData] = useState<SWPeople | null >(null);
-  const [loading, setloading] = useState(true);
-  const [error, seterror] = useState(null);
-  useEffect(()=>{
-    const fetchData = async() =>{
-      setloading(true);
-      seterror(null);
+const useFetch = (url: string) => {
+  const [data, setData] = useState<SWPeople | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
       try {
-        const respons = await fetch(url);
-        if (!respons.ok){
-          throw new error (`an error ocurred: ${respons.statusText}`);
-          const jsonData = await respons.json();
-          setData(jsonData);
+        const response = await fetch(url);
+        const jsonData = await response.json();
+        if (!response.ok) {
+          throw new Error(`An error occurred: ${response.statusText}`);
         }
-      }catch(error){
-        seterror(error.message)
-      }finally{
-        setloading(false);
+        setData(jsonData);
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("An unknown error occurred");
+        }
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
-  },[url]);
+  }, [url]);
 
-return {data, loading, error};
+  return { data, loading, error };
 };
 
 export default useFetch;
-
-
