@@ -1,8 +1,8 @@
 import "./App.scss";
-import DisneyCharacterCard from "./components/DisneyCharacterCard/DisneyCharacterCard";
+/*import DisneyCharacterCard from "./components/DisneyCharacterCard/DisneyCharacterCard";*/
 import DisPlayData from "./components/displayData/displayData";
-import LukeCard from "./components/LukeCard/LukeCard";
-import SWPeopleCard from "./components/SWPeopleCard/SWPeopleCard";
+/*import LukeCard from "./components/LukeCard/LukeCard";
+import SWPeopleCard from "./components/SWPeopleCard/SWPeopleCard";*/
 import DomRef from "./components/useref/useref";
 
 function App() {
